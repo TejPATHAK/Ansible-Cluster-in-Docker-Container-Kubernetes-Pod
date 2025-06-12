@@ -140,6 +140,3 @@ Set up SSH key-based auth and run the same playbook.
 
 ---
 
-## 📜 License
-
-This project is licensed under the MIT License.
