@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ansible-master-service
+  namespace: ansible-project
+spec:
+  selector:
+    app: ansible-master
+  ports:
+    - protocol: TCP
+      port: 22
+      targetPort: 22
+      nodePort: 32222
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ansible-node1-service
+  namespace: ansible-project
+spec:
+  selector:
+    app: ansible-node1
+  ports:
+    - protocol: TCP
+      port: 22
+      targetPort: 22
+      nodePort: 32223
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ansible-node2-service
+  namespace: ansible-project
+spec:
+  selector:
+    app: ansible-node2
+  ports:
+    - protocol: TCP
+      port: 22
+      targetPort: 22
+      nodePort: 32224
+  type: NodePort
+

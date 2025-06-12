@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ansible-node2
+  namespace: ansible-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ansible-node2
+  template:
+    metadata:
+      labels:
+        app: ansible-node2
+    spec:
+      containers:
+      - name: ansible-node2
+        image: tpathak21/ansible-image:latest
+        ports:
+        - containerPort: 22
+

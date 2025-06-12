@@ -1,0 +1,10 @@
+---
+- name: Install a package on all nodes
+  hosts: all
+  become: true
+  tasks:
+    - name: Install tree
+      package:
+        name: tree
+        state: present
+

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ansible-master
+  namespace: ansible-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ansible-master
+  template:
+    metadata:
+      labels:
+        app: ansible-master
+    spec:
+      containers:
+      - name: ansible-master
+        image: tpathak21/ansible-image:latest
+        ports:
+        - containerPort: 22
+
